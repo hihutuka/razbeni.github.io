@@ -271,7 +271,7 @@ ol {
 }
 
 .hero-inner {
-  max-width: 640px;
+  max-width: 840px;
 }
 
 .hero-eyebrow {
@@ -286,7 +286,7 @@ ol {
 
 .hero-title {
   font-family: 'Klee One', var(--font-ja);
-  font-size: clamp(1.85rem, 4.8vw, 2.9rem);
+  font-size: clamp(1.8rem, 4.6vw, 2.8rem);
   font-weight: 600;
   line-height: 1.45;
   letter-spacing: 0.02em;
@@ -297,6 +297,7 @@ ol {
 
 .hero-title span {
   display: inline-block;
+  white-space: nowrap;
 }
 
 .hero-sub {
