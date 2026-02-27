@@ -480,6 +480,15 @@ ol {
   color: var(--accent);
 }
 
+.pricing-price {
+  font-family: var(--font-en);
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-block: -0.25rem 0.25rem;
+}
+
 .pricing-plan-desc {
   font-size: 0.85rem;
   color: var(--text);
