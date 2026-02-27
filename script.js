@@ -131,6 +131,13 @@ const portfolioData = [
     youtubeId: "",
     thumbnail: "images/work6.png",
     badge: "Mastering"
+  },
+  {
+    title: "Fantasy RPG BGM – Dungeon Theme (Added)",
+    description: "ファンタジーRPGのダンジョンシーン向けに制作。ループ再生で違和感が出ないよう構成を調整し、長時間聴いても疲れにくいダイナミクスを設計しました。<br /><small>担当：作曲 / ミックス / マスタリング</small>",
+    youtubeId: "owzkhCKML0I",
+    thumbnail: "images/work1.png",
+    badge: "BGM"
   }
 ];
 
