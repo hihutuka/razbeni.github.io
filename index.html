@@ -57,10 +57,11 @@
 
       <div class="portfolio-grid">
 
-        <article class="card fade-in-up">
+        <article class="card fade-in-up" data-youtube-id="jNQXAC9IVRw">
           <div class="card-img-wrap">
             <img src="images/work1.png" alt="BGM制作サンプル" loading="lazy" />
             <span class="card-badge">BGM</span>
+            <div class="card-play-icon">▶</div>
           </div>
           <div class="card-body">
             <h3 class="card-title">Fantasy RPG BGM – Dungeon Theme</h3>
@@ -252,6 +253,19 @@
       <p class="footer-copy">&copy; 2026 razbeni. All rights reserved.</p>
     </div>
   </footer>
+
+  <!-- ========== YOUTUBE MODAL ========== -->
+  <div id="youtube-modal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" tabindex="-1" data-close></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="閉じる" data-close>&times;</button>
+      <div class="video-container">
+        <iframe id="youtube-iframe" src="" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
