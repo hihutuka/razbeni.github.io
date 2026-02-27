@@ -2,6 +2,15 @@
 <html lang="ja">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNZXXRVYP4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-TNZXXRVYP4');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="音楽制作・ミックス・マスタリングのポートフォリオサイト。ゲーム・映像・同人向け楽曲制作を承ります。" />
@@ -55,83 +64,12 @@
       <h2 class="section-title">Portfolio</h2>
       <p class="section-sub">これまでに制作した音源の一部です。用途や世界観に応じて、<br />音作りの方向性を明確に変えています。</p>
 
-      <div class="portfolio-grid">
+      <div class="portfolio-grid" id="portfolio-grid">
+        <!-- Cards will be dynamically inserted here by JavaScript -->
+      </div>
 
-        <article class="card fade-in-up" data-youtube-id="jNQXAC9IVRw">
-          <div class="card-img-wrap">
-            <img src="images/work1.png" alt="BGM制作サンプル" loading="lazy" />
-            <span class="card-badge">BGM</span>
-            <div class="card-play-icon">▶</div>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Fantasy RPG BGM – Dungeon Theme</h3>
-            <p class="card-desc">
-              ファンタジーRPGのダンジョンシーン向けに制作。ループ再生で違和感が出ないよう構成を調整し、長時間聴いても疲れにくいダイナミクスを設計しました。<br /><small>担当：作曲 / ミックス /
-                マスタリング</small></p>
-          </div>
-        </article>
-
-        <article class="card fade-in-up delay-1">
-          <div class="card-img-wrap">
-            <img src="images/work2.png" alt="ミックス作例" loading="lazy" />
-            <span class="card-badge">Mix</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">City Pop Track – Mix</h3>
-            <p class="card-desc">シティポップ楽曲のミックス対応。各パートの定位と音の奥行きを整理し、Spotify / Apple Music のラウドネス基準（−14
-              LUFS）に合わせて納品しました。<br /><small>担当：ミックス / マスタリング</small></p>
-          </div>
-        </article>
-
-        <article class="card fade-in-up delay-2">
-          <div class="card-img-wrap">
-            <img src="images/work3.png" alt="映像音楽サンプル" loading="lazy" />
-            <span class="card-badge">Cinematic</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Short Film BGM – Cinematic</h3>
-            <p class="card-desc">短編映像向けのBGM制作。映像の尺に合わせてテンポと展開を設計し、セリフや効果音を邪魔しない音量バランスで仕上げました。<br /><small>担当：作曲 /
-                ミックス</small></p>
-          </div>
-        </article>
-
-        <article class="card fade-in-up">
-          <div class="card-img-wrap">
-            <img src="images/work4.png" alt="ゲーム音楽サンプル" loading="lazy" />
-            <span class="card-badge">Game BGM</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Indie Game BGM – Retro Fusion</h3>
-            <p class="card-desc">
-              インディーゲーム向けに、チップチューン風の音色とリアルな音源を組み合わせて制作。複数シーン分をセットで対応し、BGM間の統一感を維持しました。<br /><small>担当：作曲 / ミックス</small>
-            </p>
-          </div>
-        </article>
-
-        <article class="card fade-in-up delay-1">
-          <div class="card-img-wrap">
-            <img src="images/work5.png" alt="アンビエント作例" loading="lazy" />
-            <span class="card-badge">Ambient</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Ambient BGM – Loopable</h3>
-            <p class="card-desc">ゲームのロビーや待機画面向けのアンビエントBGM制作。ループポイントを自然につなげ、長時間流しても違和感のない構成にしました。<br /><small>担当：作曲 /
-                ミックス / マスタリング</small></p>
-          </div>
-        </article>
-
-        <article class="card fade-in-up delay-2">
-          <div class="card-img-wrap">
-            <img src="images/work6.png" alt="マスタリング作例" loading="lazy" />
-            <span class="card-badge">Mastering</span>
-          </div>
-          <div class="card-body">
-            <h3 class="card-title">Track Mastering – Streaming向け</h3>
-            <p class="card-desc">
-              完成済み音源のマスタリング対応。配信プラットフォームのラウドネス基準に準拠しつつ、音圧・音質のバランスを整えて納品しました。<br /><small>担当：マスタリング</small></p>
-          </div>
-        </article>
-
+      <div class="portfolio-more" id="portfolio-more-container">
+        <button class="btn btn-outline" id="load-more-btn">もっと見る / Show More</button>
       </div>
     </div>
   </section>
@@ -253,19 +191,6 @@
       <p class="footer-copy">&copy; 2026 razbeni. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- ========== YOUTUBE MODAL ========== -->
-  <div id="youtube-modal" class="modal" aria-hidden="true">
-    <div class="modal-overlay" tabindex="-1" data-close></div>
-    <div class="modal-content">
-      <button class="modal-close" aria-label="閉じる" data-close>&times;</button>
-      <div class="video-container">
-        <iframe id="youtube-iframe" src="" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
