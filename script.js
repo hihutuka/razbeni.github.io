@@ -197,6 +197,15 @@ const renderPortfolio = () => {
         // Prevent re-initialization if already playing
         if (imgWrap.querySelector('iframe')) return;
 
+        // GA4 Tracking for Portfolio Play
+        if (typeof gtag === 'function') {
+          gtag('event', 'play_portfolio_video', {
+            'event_category': 'engagement',
+            'event_label': item.title,
+            'youtube_id': videoId
+          });
+        }
+
         imgWrap.innerHTML = `
           <iframe 
             src="https://www.youtube.com/embed/${videoId}?autoplay=1" 
@@ -256,6 +265,32 @@ const observeElements = () => {
 portfolioObserverContent = observeElements;
 
 /* ----------------------------------------
+   GA4 Event Tracking
+   ---------------------------------------- */
+const initGA4Tracking = () => {
+  // Track Coconala Link Clicks
+  const coconalaLinks = document.querySelectorAll('a[href*="coconala.com"]');
+  coconalaLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      const linkText = link.innerText.trim() || 'Icon/Image';
+      const linkId = link.id || 'no_id';
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_coconala', {
+          'event_category': 'outbound_link',
+          'event_label': linkText,
+          'link_id': linkId,
+          'link_url': link.href
+        });
+      }
+    });
+  });
+
+  // Track YouTube Modal Plays (existing logic handles this if modal, but we changed to inline)
+  // Tracking inline YouTube plays inside renderPortfolio
+};
+
+/* ----------------------------------------
    Boot
    ---------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
@@ -265,4 +300,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initNav();
   initHeaderShadow();
   initActiveNav();
+  initGA4Tracking();
 });
